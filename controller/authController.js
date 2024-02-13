@@ -20,7 +20,6 @@ const Register = async (req, res) => {
     name,
     email,
     password: hashedPassword,
-    isAdmin: true,
   });
   try {
     await newUser.save();
