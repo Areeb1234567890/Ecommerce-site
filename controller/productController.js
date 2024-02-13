@@ -34,7 +34,7 @@ const addProduct = async (req, res) => {
       image: imageUrl,
     });
 
-    res.status(200).json({ msg: "post added successfully" });
+    res.status(200).json({ msg: "Product added successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
