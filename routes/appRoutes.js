@@ -10,6 +10,8 @@ const {
   getProduct,
   addProduct,
   deleteProduct,
+  editProduct,
+  getOneProduct,
 } = require("../controller/productController");
 const { getUserData } = require("../controller/userController");
 const multer = require("multer");
@@ -24,6 +26,9 @@ Route.get("/getUserOrder/:id", GetUserOrders);
 Route.post("/addProduct", uploads.single("file"), addProduct);
 Route.get("/getProducts", getProduct);
 Route.delete("/deleteProduct/:id", deleteProduct);
+Route.put("/editProduct/:id", editProduct);
+Route.get("/getOneProduct/:id", getOneProduct);
 Route.get("/getUsers", getUserData);
 
 module.exports = Route;
+5;
