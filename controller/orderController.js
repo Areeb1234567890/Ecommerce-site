@@ -82,5 +82,20 @@ const GetUserOrders = async (req, res) => {
   }
 };
 
+const deliverOrder = async (req, res) => {
+  try {
+    const orderId = req.params.id;
+    const orderExist = await orderModel.findById(orderId);
+    if (!orderExist) {
+      return res.status(404).json({ msg: "product not found" });
+    }
+    await orderModel.findByIdAndUpdate(orderId, req.body, {
+      new: true,
+    });
+    res.status(200).json({ msg: "Order dispatched successfully" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
-module.exports = { Order, GetOrder, GetUserOrders };
+module.exports = { Order, GetOrder, GetUserOrders, deliverOrder };

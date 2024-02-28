@@ -62,7 +62,6 @@ const getOneProduct = async (req, res) => {
 };
 
 const editProduct = async (req, res) => {
-  console.log(req.body);
   try {
     const productId = req.params.id;
     const productExist = await productModel.findById(productId);

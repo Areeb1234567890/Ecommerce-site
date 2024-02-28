@@ -5,6 +5,7 @@ const {
   Order,
   GetOrder,
   GetUserOrders,
+  deliverOrder,
 } = require("../controller/orderController");
 const {
   getProduct,
@@ -27,6 +28,7 @@ Route.post("/addProduct", uploads.single("file"), addProduct);
 Route.get("/getProducts", getProduct);
 Route.delete("/deleteProduct/:id", deleteProduct);
 Route.put("/editProduct/:id", editProduct);
+Route.put("/deliverOrder/:id", deliverOrder);
 Route.get("/getOneProduct/:id", getOneProduct);
 Route.get("/getUsers", getUserData);
 
