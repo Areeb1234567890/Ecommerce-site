@@ -13,7 +13,7 @@ connectToDb(Uri);
 app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
-app.use(authenticateToken);
+// app.use(authenticateToken);
 // app.use(checkAdmin);
 app.use("/api", Route);
 
